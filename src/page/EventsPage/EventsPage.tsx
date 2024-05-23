@@ -84,6 +84,9 @@ const EventsPage = () => {
           Sort by Organizer
         </button>
       </div>
+      {eventsList.length === 0 && (
+        <p className={styles.textServerStart}>Please wait for the server to start!</p>
+      )}
       <ul className={styles.eventsList}>
         {eventsList.map(({ _id, title, description, eventDate, organizer }: EventBoard, index) => (
           <li

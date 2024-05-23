@@ -32,7 +32,9 @@ const RegistrationChart: FC<ChartProps> = ({ data }) => {
         label: "Registrations",
         data: data.map((item) => item.count),
         borderColor: "#b87400",
-        backgroundColor: "#b8750097"
+        backgroundColor: "#eba224)",
+        pointBorderColor: "#b87400",
+        pointBackgroundColor: "#b87400"
       }
     ]
   };
@@ -42,17 +44,24 @@ const RegistrationChart: FC<ChartProps> = ({ data }) => {
       x: {
         title: {
           display: true,
-          text: "Date"
+          text: "Date",
+          color: "green"
+        },
+        ticks: {
+          color: "green"
         }
       },
+
       y: {
         title: {
           display: true,
-          text: "Registration Count"
+          text: "Registration Count",
+          color: "green"
         },
         beginAtZero: true,
         ticks: {
-          stepSize: 1
+          stepSize: 1,
+          color: "green"
         }
       }
     }

@@ -1,4 +1,6 @@
-@import './reset';
+@import './reset.scss';
+@import './themes/normal.scss';
+@import './themes/dark.scss';
 
 body {
 	margin: 0;
@@ -10,4 +12,11 @@ body {
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.main {
+	background-color: var(--bg-color);
+	color: var(--prim-color);
+
+	min-height: 100vh;
 }

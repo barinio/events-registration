@@ -1,18 +1,19 @@
 import { useFormik } from "formik";
 import { Link, useParams } from "react-router-dom";
+import { useState } from "react";
+import { AxiosError } from "axios";
+import { toast } from "react-toastify";
 
 import { Participants } from "../../types/Participants";
 import { validationSchema } from "./utils/validationSchema";
 import { initialValues } from "./utils/initialValues";
+
 import LabelAndInputMarkup from "../../components/FormEventFregistration/LabelAndInputMarkup/LabelAndInputMarkup";
+import RadioGroupMarkup from "../../components/FormEventFregistration/RadioGroupMarkup/RadioGroupMarkup";
+import { addNewParticipant } from "../../services/api";
+import Loader from "../../components/Loader/Loader";
 
 import styles from "./EventRegistrationPage.module.scss";
-import { addNewParticipant } from "../../services/api";
-import RadioGroupMarkup from "../../components/FormEventFregistration/RadioGroupMarkup/RadioGroupMarkup";
-import { useState } from "react";
-import Loader from "../../components/Loader/Loader";
-import { toast } from "react-toastify";
-import { AxiosError } from "axios";
 
 const EventRegistrationPage = () => {
   const [isLoading, setIsLoading] = useState(false);

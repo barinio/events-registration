@@ -1,10 +1,10 @@
+import { FC } from "react";
+
+import { FormMarkupProps } from "../../../types/FormMarkupProps";
 import { radioValues } from "./radioValues";
 
 import icons from "../../../images/icons.svg";
-
 import styles from "./RadioGroupMarkup.module.scss";
-import { FC } from "react";
-import { FormMarkupProps } from "../../../types/FormMarkupProps";
 
 const RadioGroupMarkup: FC<FormMarkupProps> = ({ formik }) => {
   return (

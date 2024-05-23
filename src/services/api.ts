@@ -2,7 +2,7 @@ import axios from "axios";
 import { Participants } from "../types/Participants";
 
 const instance = axios.create({
-  baseURL: "http://localhost:3000"
+  baseURL: "https://events-registration-backend.onrender.com/"
 });
 
 export const getEventsList = async (page: number) => {
