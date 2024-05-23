@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Events registration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Backend](https://github.com/barinio/events-registration-backend) to this frontend.
+
+<details>
+<summary>More information</summary>
 
 ## Available Scripts
 
@@ -13,4 +16,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.
 
-You can also view the work by opening the Netlify website.
+</details>
+
+You can view the work by opening the [Netlify website](https://events-registration-test-assignment.netlify.app/).
