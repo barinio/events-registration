@@ -1,8 +1,7 @@
 export interface EventBoard {
-  // id: number;
+  _id?: string;
   title: string;
   description: string;
-  // eventDate: Date;
-  eventDate: number;
+  eventDate: string;
   organizer: string;
 }

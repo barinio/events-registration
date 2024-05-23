@@ -1,0 +1,23 @@
+.containerLabelInput {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.labelFormik {
+	margin-bottom: 4px;
+	line-height: 1.17;
+	color: black;
+}
+
+.inputFormik {
+	width: 100%;
+	height: 40px;
+	border: 1px solid gold;
+	border-radius: 4px;
+	background-color: transparent;
+	padding: 0 8px;
+	outline: transparent;
+}
+.inputValidationError {
+	color: red;
+}

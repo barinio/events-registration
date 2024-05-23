@@ -1,5 +1,102 @@
-.containerItem {
-	border: 1px solid brown;
-	margin: 5px;
+.mainTitle {
+	text-align: center;
+	font-size: 48px;
+	padding-top: 10px;
+}
+.sortButtonsList {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	width: 70%;
+	margin: auto;
+	margin-top: 15px;
+}
+
+.eventsList {
+	display: flex;
+	flex-direction: column;
+	padding: 20px 15px;
+	align-items: center;
+	gap: 15px;
+
+	@media (width >= 768px) {
+		align-items: stretch;
+		width: 552px;
+		margin: 0 auto;
+		flex-direction: row;
+		flex-wrap: wrap;
+		column-gap: 24px;
+		row-gap: 32px;
+	}
+	@media (width >= 1158px) {
+		gap: 24px;
+		width: 1158px;
+	}
+}
+.containerEventItem {
+	border: 1px solid #b87400;
 	padding: 5px;
+
+	width: 264px;
+	height: auto;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 10px;
+
+	@media (width >= 768px) {
+		flex-basis: calc((100% - 24px) / 2);
+	}
+	@media (width >= 1158px) {
+		flex-basis: calc((100% - 72px) / 4);
+	}
+}
+.eventTitle {
+	font-size: 21px;
+	font-weight: 700;
+	text-align: center;
+	flex: 1;
+	align-content: center;
+}
+// .additionalInformation {
+// }
+.eventDescription {
+	padding: 5px 0;
+}
+.eventDate {
+	font-weight: 700;
+}
+.eventOrganizer {
+	font-style: italic;
+}
+.eventOrganizerDescription {
+	font-weight: 700;
+}
+.eventButtons {
+	display: flex;
+	margin: 15px 0 5px;
+	justify-content: space-evenly;
+}
+
+.register,
+.view,
+.sortButton {
+	background-color: #b87400;
+	border-radius: 12px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.43;
+	padding: 12px 0;
+	text-align: center;
+	width: 100px;
+
+	&:is(:hover, :focus) {
+		background-color: #976103;
+	}
+}
+.sortButton {
+	width: auto;
+	padding: 10px 15px;
 }

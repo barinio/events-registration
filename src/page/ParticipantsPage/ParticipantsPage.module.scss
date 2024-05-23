@@ -1,5 +1,71 @@
+.goBackLink {
+	display: inline-block;
+	padding: 5px;
+}
+
 .container {
-	border: 1px solid forestgreen;
+	border: 1px solid #b87400;
+	border-radius: 8px;
 	padding: 5px;
 	margin: 5px;
+}
+
+.titlePage {
+	text-align: center;
+	font-size: 32px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.participantSearchContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 15px;
+	gap: 5px;
+}
+
+.searchInput {
+	border: 1px solid #b87400;
+	border-radius: 8px;
+}
+
+.participantsList {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 300px;
+	list-style-type: decimal;
+}
+
+.participantName {
+	text-transform: capitalize;
+}
+.emptyText,
+.happyText {
+	text-align: center;
+	color: tomato;
+	font-size: 24px;
+	font-weight: 600;
+}
+.invitationText {
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+	font-weight: 400;
+
+	font-size: 18px;
+}
+.emptyWrapper {
+	width: 50%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	border-radius: 7px;
+	box-shadow: rgb(71, 45, 0) 0px 0px 7px inset;
+	background-image: linear-gradient(55deg, rgb(218, 250, 92), rgb(49, 211, 128));
+	background-color: gold;
+	gap: 10px;
+	align-items: center;
 }

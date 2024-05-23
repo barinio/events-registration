@@ -1,0 +1,40 @@
+.radioGroupContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.titleRadio {
+	text-align: center;
+	margin-bottom: 15px;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.hiddenRadioInput {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+
+	& + label svg {
+		fill: none;
+	}
+	&:checked + label svg {
+		fill: black;
+	}
+}
+
+.radioLabel {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	font-size: 16px;
+	line-height: 1.25;
+}

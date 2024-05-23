@@ -1,0 +1,44 @@
+.goBackLink {
+	display: inline-block;
+	padding: 10px;
+}
+.titlePage {
+	text-align: center;
+	font-size: 32px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+.formFormik {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 0 20px;
+}
+.formWrapper {
+	width: 75%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	border-radius: 7px;
+	box-shadow: rgb(71, 45, 0) 0px 0px 7px inset;
+	background-image: linear-gradient(55deg, rgb(222, 176, 9), rgb(181, 111, 6));
+	background-color: gold;
+	gap: 16px;
+}
+.btnSubmit {
+	background-color: black;
+	text-align: center;
+	color: gold;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 1.5;
+	letter-spacing: 0.04em;
+	cursor: pointer;
+	padding: 12px 24px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	border: none;
+	width: 169px;
+	align-self: center;
+}

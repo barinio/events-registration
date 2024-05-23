@@ -1,36 +1,61 @@
-import { Link } from "react-router-dom";
+import { useFormik } from "formik";
+import { Link, useParams } from "react-router-dom";
+
+import { Participants } from "../../types/Participants";
+import { validationSchema } from "./utils/validationSchema";
+import { initialValues } from "./utils/initialValues";
+import LabelAndInputMarkup from "../../components/FormEventFregistration/LabelAndInputMarkup/LabelAndInputMarkup";
+
+import styles from "./EventRegistrationPage.module.scss";
+import { addNewParticipant } from "../../services/api";
+import RadioGroupMarkup from "../../components/FormEventFregistration/RadioGroupMarkup/RadioGroupMarkup";
+import { useState } from "react";
+import Loader from "../../components/Loader/Loader";
+import { toast } from "react-toastify";
+import { AxiosError } from "axios";
 
 const EventRegistrationPage = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const { eventId } = useParams();
+
+  const formik = useFormik<Participants>({
+    initialValues,
+    validationSchema,
+    onSubmit: async (values) => {
+      try {
+        setIsLoading(true);
+        const registrationTime = new Date().toLocaleDateString("en-GB");
+        await addNewParticipant({ ...values, eventId, registrationTime });
+        toast.success(`Participant ${values.fullName} successfully added`);
+        formik.resetForm();
+      } catch (error) {
+        error instanceof AxiosError && toast.error(error.response?.data.message);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+  });
+
   return (
     <>
-      <Link to="/">Go back</Link>
+      <Link to="/" className={styles.goBackLink}>
+        ←Go Back
+      </Link>
 
-      <h2>Event registration</h2>
-      <label>
-        Full name
-        <input type="text" />
-      </label>
-      <label>
-        Email
-        <input type="text" />
-      </label>
-      <label>
-        Date of birth
-        <input type="text" />
-      </label>
-      <p>Where did you hear about this event?</p>
-      <div>
-        <input type="radio" id="social-media" name="hear-event" value="social-media" />
-        <label htmlFor="social-media">Social media</label>
-      </div>
-      <div>
-        <input type="radio" id="friends" name="hear-event" value="friends" />
-        <label htmlFor="friends">Friends</label>
-      </div>
-      <div>
-        <input type="radio" id="found-myself" name="hear-event" value="found-myself" />
-        <label htmlFor="found-myself">Found myself</label>
-      </div>
+      <h2 className={styles.titlePage}>Event registration</h2>
+
+      <form onSubmit={formik.handleSubmit} className={styles.formFormik}>
+        <div className={styles.formWrapper}>
+          <LabelAndInputMarkup formik={formik} />
+          <RadioGroupMarkup formik={formik} />
+        </div>
+
+        <button type="submit" className={styles.btnSubmit}>
+          Submit
+        </button>
+      </form>
+
+      {isLoading && <Loader />}
     </>
   );
 };
